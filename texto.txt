@@ -1,1 +1,1 @@
-Alteração diferente na main
+Texto final conciliado entre main e feature-1
