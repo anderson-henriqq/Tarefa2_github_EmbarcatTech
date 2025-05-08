@@ -1,0 +1,30 @@
+Seu Nome Completo
+
+# Comandos utilizados:
+mkdir -p atividade-git && cd atividade-git
+git clone https://gitlab.com/mizael.cortez/curso-branchs-ifrn-ead projeto
+cd projeto
+echo "Linha inicial na main" > texto.txt
+git add texto.txt
+git commit -m "feat: adiciona texto inicial na main"
+git checkout -b feature-1
+echo "Alteração feita na feature-1" > texto.txt
+git add texto.txt
+git commit -m "feat: altera texto na feature-1"
+git checkout main
+echo "Alteração diferente na main" > texto.txt
+git add texto.txt
+git commit -m "feat: altera texto na main de forma conflitante"
+git merge feature-1
+# Resolver conflito
+echo "Texto final conciliado entre main e feature-1" > texto.txt
+git add texto.txt
+git commit -m "fix: resolve conflito entre main e feature-1"
+git checkout -b add-comandos
+cat <<EOF > comandos.txt
+git add comandos.txt
+git commit -m "docs: adiciona comandos e nome"
+git remote add origin-atividade https://github.com/anderson-henriqq/Tarefa2_github_EmbarcatTech.git
+git pull --rebase origin-atividade main
+git push origin-atividade main
+git push origin-atividade add-comandos
